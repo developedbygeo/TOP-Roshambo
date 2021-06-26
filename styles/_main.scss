@@ -1,0 +1,71 @@
+body {
+  background: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.introduction {
+  overflow: hidden;
+  height: 7vh;
+  color: #f1faee;
+  font-size: 3.5rem;
+  @include flex(flex-end, center, column);
+  h1 {
+    transition: all 2s ease;
+    font-size: 3.5rem;
+  }
+  span {
+    font-size: 3.5rem;
+  }
+  div {
+    font-size: 2rem;
+  }
+}
+
+main {
+  margin-top: 3vh;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(3.5rem, 1fr));
+  grid-template-rows: repeat(2, minmax(3rem, 1fr));
+}
+.rock {
+  background: url("../img/rock.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.paper {
+  background: url("../img/paper.png");
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.scissors {
+  background: url("../img/scissors.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.score {
+  grid-area: 2/2/3;
+  text-align: center;
+  @include flex(space-evenly, center, column);
+  .current-score,
+  .player,
+  .computer {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+  }
+  h2 {
+    font-size: 3.5rem;
+  }
+}
+.score-com {
+  grid-area: 2/3/4;
+  @include flex(center, center, column);
+}
+.play-again {
+  display: none;
+}

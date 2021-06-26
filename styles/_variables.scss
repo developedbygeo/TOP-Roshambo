@@ -1,0 +1,10 @@
+@mixin flex($justify, $align, $dir) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $dir;
+}
+$light: #f1faee;
+$win: #2a9d8f;
+$lose: #e76f51;
+$com: #e5e5e5;
