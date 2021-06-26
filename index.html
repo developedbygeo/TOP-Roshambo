@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ovo&family=Quattrocento+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Roshambo - Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <header class="introduction">
+      <h1>
+        <span class="initial"></span>
+        <span class="once">Once upon a time</span>
+        <span class="war"></span>
+        <span class="lost"></span>
+        <span class="down-to"></span>
+        <span class="game"></span>
+        <span class="underscore">_</span>
+      </h1>
+    </header>
+    <main>
+      <div class="rock holder"></div>
+      <div class="paper holder"></div>
+      <div class="scissors holder"></div>
+      <div class="score">
+        <h2>Score</h2>
+        <div class="score-update">
+          <p class="current-score">
+            <span class="player">2</span>:<span class="computer">2</span>
+          </p>
+        </div>
+      </div>
+      <div class="score-com">
+        <p class="score-commentary">You are winning</p>
+        <button class="play-again">Play Again</button>
+      </div>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+      integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"
+      integrity="sha512-orz/l0zz+W+3mJKlUrK3jQ4q+5RlMt3QPtwifhy3QBD2q2AEarIN55NQDHBrRN9Rc543hRdYjUmCJhG8Jbz5Zg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/EasePack.min.js"
+      integrity="sha512-9ILyaMtQm2+PaFWjPHwuYLTbMikHn1IgVqmqjOvk76n7GDcW977u9v5rBt/s/PJOFbJA84WJjIzFHiMEfhVHMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="./app.js"></script>
+  </body>
+</html>
