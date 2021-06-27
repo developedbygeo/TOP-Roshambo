@@ -60,11 +60,13 @@ main {
   }
   h2 {
     font-size: 3.5rem;
+    letter-spacing: 1rem;
   }
 }
 .score-com {
   grid-area: 2/3/4;
-  @include flex(center, center, column);
+  @include flex(space-evenly, center, column);
+  display: none;
 }
 .play-again {
   display: none;

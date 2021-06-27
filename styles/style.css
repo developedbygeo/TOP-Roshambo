@@ -105,14 +105,16 @@ main {
 
 .score h2 {
   font-size: 3.5rem;
+  letter-spacing: 1rem;
 }
 
 .score-com {
   grid-area: 2/3/4;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  display: none;
 }
 
 .play-again {
