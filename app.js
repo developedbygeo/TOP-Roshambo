@@ -66,13 +66,20 @@ function animateUpdates() {
 //   });
 // }
 
-function startGame() {
+function gameInit() {
   allButtons.forEach(function (button) {
+    const playerCommentary = document.querySelector(".player-commentary");
+    const computerCommentary = document.querySelector(".computer-commentary");
     button.addEventListener("click", () => {
       const computerChoice = Math.floor(Math.random() * 3);
       const choicesArray = ["rock", "paper", "scissors"];
+      const finalPlayerChoice = button.id;
       const finalComputerChoice = choicesArray[computerChoice];
+      console.log(button.id);
       console.log(finalComputerChoice);
+      compareResults(finalPlayerChoice, finalComputerChoice);
+      playerCommentary.innerText = `You selected ${finalPlayerChoice}.`;
+      computerCommentary.innerText = `The computer selected ${finalComputerChoice}.`;
     });
   });
 }
@@ -116,26 +123,59 @@ function playerPlay() {
 function storeResults() {}
 
 function compareResults(playerSelection, computerSelection) {
-  if (playerSelection == computerSelection) {
-    return 0; // tie
+  console.log(playerSelection, computerSelection);
+  const winnerCommentary = document.querySelector(".score-commentary-final");
+  winnerCommentary.style.letterSpacing = "1rem";
+  winnerCommentary.style.fontWeight = "bold";
+  winnerCommentary.style.fontSize = "3rem";
+  if (playerSelection === computerSelection) {
+    winnerCommentary.innerText = "TIE";
+    winnerCommentary.style.color = "#e5e5e5";
   } else if (playerSelection == "rock")
     if (computerSelection === "scissors") {
-      return 1; // player wins
+      winnerCommentary.innerText = "WIN";
+      winnerCommentary.style.color = "#2a9d8f";
+      playerScoreTotal++;
+      playerScore.innerText = playerScoreTotal;
+      playerScore.style.color = "#2a9d8f";
     } else if (computerSelection === "paper") {
-      return 2; // computer wins
+      winnerCommentary.innerText = "DEFEAT";
+      winnerCommentary.style.color = "#2a9d8f";
+      computerScoreTotal++;
+      computerScore.innerText = computerScoreTotal;
+      playerScore.style.color = "#e5e5e5";
+      computerScore.style.color = "#e76f51";
     } else if (playerSelection == "paper") {
       if (computerSelection == "rock") {
-        return 1; // player wins
+        winnerCommentary.innerText = "WIN";
+        winnerCommentary.style.color = "#2a9d8f";
+        playerScoreTotal++;
+        playerScore.innerText = playerScoreTotal;
+        playerScore.style.color = "#2a9d8f";
       } else if (computerSelection == "scissors") {
-        return 2; // computer wins
+        winnerCommentary.innerText = "DEFEAT";
+        winnerCommentary.style.color = "#2a9d8f";
+        computerScoreTotal++;
+        computerScore.innerText = computerScoreTotal;
+        playerScore.style.color = "#e5e5e5";
+        computerScore.style.color = "#e76f51";
       }
     } else if (playerSelection == "scissors") {
       if (computerSelection == "paper") {
-        return 1; // player wins
+        winnerCommentary.innerText = "WIN";
+        winnerCommentary.style.color = "#2a9d8f";
+        playerScoreTotal++;
+        playerScore.innerText = playerScoreTotal;
+        playerScore.style.color = "#2a9d8f";
       } else if (computerSelection == "rock") {
-        return 2; // computer wins
+        winnerCommentary.innerText = "DEFEAT";
+        winnerCommentary.style.color = "#2a9d8f";
+        computerScoreTotal++;
+        computerScore.innerText = computerScoreTotal;
+        playerScore.style.color = "#e5e5e5";
+        computerScore.style.color = "#e76f51";
       }
     }
 }
 
-startGame();
+gameInit();
