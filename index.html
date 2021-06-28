@@ -43,9 +43,9 @@
       </h1>
     </header>
     <main>
-      <div class="rock holder"></div>
-      <div class="paper holder"></div>
-      <div class="scissors holder"></div>
+      <div id="rock" class="rock holder"></div>
+      <div id="paper" class="paper holder"></div>
+      <div id="scissors" class="scissors holder"></div>
       <div class="score">
         <h2>Score</h2>
         <div class="score-update">
@@ -55,8 +55,11 @@
         </div>
       </div>
       <div class="score-com">
-        <p class="score-commentary">You chose X.The computer chose Y</p>
-        <p class="score-commentar2">You win this round!</p>
+        <div class="live-game-comments">
+          <p class="score-commentary player-commentary"></p>
+          <p class="score-commentary computer-commentary"></p>
+        </div>
+        <p class="score-commentary-final final"></p>
         <button class="play-again">Play Again</button>
       </div>
     </main>
