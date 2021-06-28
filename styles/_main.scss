@@ -66,7 +66,14 @@ main {
 .score-com {
   grid-area: 2/3/4;
   @include flex(space-evenly, center, column);
-  display: none;
+  font-size: 1.6rem;
+}
+.live-game-comments {
+  font-size: 1.6rem;
+  text-align: center;
+  p {
+    margin-top: 2rem;
+  }
 }
 .play-again {
   display: none;

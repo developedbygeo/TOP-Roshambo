@@ -114,7 +114,16 @@ main {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  display: none;
+  font-size: 1.6rem;
+}
+
+.live-game-comments {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.live-game-comments p {
+  margin-top: 2rem;
 }
 
 .play-again {
