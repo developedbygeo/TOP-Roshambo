@@ -128,5 +128,14 @@ main {
 
 .play-again {
   display: none;
+  padding: 2rem 8rem;
+  border: 1px solid #e5e5e5;
+  color: #e5e5e5;
+  background: transparent;
+  font-size: 2rem;
+}
+
+.active {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
