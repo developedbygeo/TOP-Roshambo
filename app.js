@@ -53,8 +53,6 @@ function animateUpdates() {
 }
 
 function gameInit() {
-  playerCurrentScore = parseFloat(playerScore.innerText);
-  computerCurrentScore = parseFloat(computerScore.innerText);
   allButtons.forEach(function (button) {
     const playerCommentary = document.querySelector(".player-commentary");
     const computerCommentary = document.querySelector(".computer-commentary");
@@ -135,10 +133,6 @@ function compareResults(playerSelection, computerSelection) {
     gameTerminateWin();
   }
 }
-
-// TODO Refactor gameTerminateDefeat();
-// TODO Create gameTerminateWin()
-// TODO Create h1 to replace main divs
 
 function gameTerminateDefeat() {
   const winnerAnnouncement = document.querySelector(".result");
