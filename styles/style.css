@@ -140,6 +140,10 @@ main {
   display: block;
 }
 
+.inactive-btn {
+  display: none;
+}
+
 .play-again-div {
   display: none;
 }
