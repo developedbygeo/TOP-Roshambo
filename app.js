@@ -31,7 +31,8 @@ window.addEventListener("load", () => {
 });
 
 playAgainButton.addEventListener("click", () => {
-  location.reload();
+  restartGame();
+  resetScore();
 });
 
 // Functions
@@ -52,6 +53,8 @@ function animateUpdates() {
 }
 
 function gameInit() {
+  playerCurrentScore = parseFloat(playerScore.innerText);
+  computerCurrentScore = parseFloat(computerScore.innerText);
   allButtons.forEach(function (button) {
     const playerCommentary = document.querySelector(".player-commentary");
     const computerCommentary = document.querySelector(".computer-commentary");
@@ -159,4 +162,33 @@ function gameTerminateWin() {
   winnerAnnouncement.innerText = "WON";
   winnerAnnouncement.style.color = "#2a9d8f";
   winnerTextAndButton.classList.add("play-again-div-active");
+}
+
+function restartGame() {
+  const commentaryDiv = document.querySelector(".score-com");
+  const playerCommentary = document.querySelector(".player-commentary");
+  const computerCommentary = document.querySelector(".computer-commentary");
+  const winnerCommentary = document.querySelector(".score-commentary-final");
+  const winnerTextAndButton = document.querySelector(".play-again-div");
+  playAgainButton.classList.remove("active");
+  winnerTextAndButton.classList.remove("play-again-div-active");
+  commentaryDiv.style.display = "";
+  allButtons.forEach(function (button) {
+    button.style.display = "";
+  });
+  playerCommentary.innerText = "";
+  computerCommentary.innerText = "";
+  winnerCommentary.innerText = "";
+}
+function resetScore() {
+  playerScore.innerText = "0";
+  computerScore.innerText = "0";
+  playerCurrentScore = parseFloat(playerScore.innerText);
+  computerCurrentScore = parseFloat(computerScore.innerText);
+}
+
+if (computerCurrentScore == 10) {
+  gameTerminateDefeat();
+} else if (playerCurrentScore == 10) {
+  gameTerminateWin();
 }
