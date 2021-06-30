@@ -31,8 +31,7 @@ window.addEventListener("load", () => {
 });
 
 playAgainButton.addEventListener("click", () => {
-  restartGame();
-  gameInit();
+  location.reload();
 });
 
 // Functions
@@ -160,25 +159,4 @@ function gameTerminateWin() {
   winnerAnnouncement.innerText = "WON";
   winnerAnnouncement.style.color = "#2a9d8f";
   winnerTextAndButton.classList.add("play-again-div-active");
-}
-
-function restartGame() {
-  const commentaryDiv = document.querySelector(".score-com");
-  const playerCommentary = document.querySelector(".player-commentary");
-  const computerCommentary = document.querySelector(".computer-commentary");
-  const winnerCommentary = document.querySelector(".score-commentary-final");
-  const winnerTextAndButton = document.querySelector(".play-again-div");
-  playerCurrentScore = 0;
-  computerCurrentScore = 0;
-  playAgainButton.style.display = "none";
-  winnerTextAndButton.style.display = "none";
-  commentaryDiv.style.display = "";
-  allButtons.forEach(function (button) {
-    button.style.display = "";
-  });
-  playerCommentary.innerText = "";
-  computerCommentary.innerText = "";
-  winnerCommentary.innerText = "";
-  playerScore.innerText = "0";
-  computerScore.innerText = "0";
 }
