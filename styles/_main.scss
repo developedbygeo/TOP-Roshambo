@@ -61,6 +61,7 @@ main {
   h2 {
     font-size: 3.5rem;
     letter-spacing: 1rem;
+    user-select: none;
   }
 }
 .score-com {
@@ -85,4 +86,20 @@ main {
 }
 .active {
   display: block;
+}
+.play-again-div {
+  display: none;
+}
+.play-again-div-active {
+  grid-area: 1/2;
+  @include flex(space-evenly, center, column);
+  text-align: center;
+  h1,
+  span {
+    font-family: "Ovo", serif;
+    font-size: 3.5rem;
+  }
+  button {
+    font-family: "Quattrocento Sans", sans-serif;
+  }
 }

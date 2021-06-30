@@ -106,6 +106,7 @@ main {
 .score h2 {
   font-size: 3.5rem;
   letter-spacing: 1rem;
+  user-select: none;
 }
 
 .score-com {
@@ -137,5 +138,28 @@ main {
 
 .active {
   display: block;
+}
+
+.play-again-div {
+  display: none;
+}
+
+.play-again-div-active {
+  grid-area: 1/2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.play-again-div-active h1,
+.play-again-div-active span {
+  font-family: "Ovo", serif;
+  font-size: 3.5rem;
+}
+
+.play-again-div-active button {
+  font-family: "Quattrocento Sans", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
