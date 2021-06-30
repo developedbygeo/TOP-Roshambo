@@ -23,8 +23,6 @@ let imagesTimeline = gsap.timeline({ defaults: { duration: 1.5, opacity: 0 } });
 let introTimeline = gsap.timeline({
   defaults: { duration: 5 },
 });
-let playerScoreTotal = 0;
-let computerScoreTotal = 0;
 
 window.addEventListener("load", () => {
   animateUpdates();
@@ -33,7 +31,7 @@ window.addEventListener("load", () => {
 });
 
 playAgainButton.addEventListener("click", () => {
-  restartGameCommentary();
+  restartGame();
   gameInit();
 });
 
@@ -55,6 +53,8 @@ function animateUpdates() {
 }
 
 function gameInit() {
+  playerCurrentScore = parseFloat(playerScore.innerText);
+  computerCurrentScore = parseFloat(computerScore.innerText);
   allButtons.forEach(function (button) {
     const playerCommentary = document.querySelector(".player-commentary");
     const computerCommentary = document.querySelector(".computer-commentary");
@@ -63,12 +63,9 @@ function gameInit() {
       const choicesArray = ["rock", "paper", "scissors"];
       const finalPlayerChoice = button.id;
       const finalComputerChoice = choicesArray[computerChoice];
-      compareResults(finalPlayerChoice, finalComputerChoice);
       playerCommentary.innerText = `You selected ${finalPlayerChoice}.`;
       computerCommentary.innerText = `The computer selected ${finalComputerChoice}.`;
-      // if (playerCurrentScore == 10 || computerCurrentScore == 10) {
-      //   gameTerminate();
-      // }
+      compareResults(finalPlayerChoice, finalComputerChoice);
     });
   });
 }
@@ -80,8 +77,6 @@ function animateImages() {
     stagger: 0.8,
   });
 }
-
-function storeResults() {}
 
 function compareResults(playerSelection, computerSelection) {
   const winnerCommentary = document.querySelector(".score-commentary-final");
@@ -146,19 +141,50 @@ function compareResults(playerSelection, computerSelection) {
 // TODO Create h1 to replace main divs
 
 function gameTerminateDefeat() {
-  const commentaryDiv = document.querySelector(".live-game-comments");
-  const winnerCommentary = document.querySelector(".score-commentary-final");
+  const winnerAnnouncement = document.querySelector(".result");
+  const winnerTextAndButton = document.querySelector(".play-again-div");
+  const commentaryDiv = document.querySelector(".score-com");
   allButtons.forEach(function (button) {
     button.style.display = "none";
   });
   commentaryDiv.style.display = "none";
-  winnerCommentary.innerText = "Game Over";
   playAgainButton.classList.add("active");
+  winnerAnnouncement.innerText = "LOST";
+  winnerAnnouncement.style.color = "#e76f51";
+  winnerTextAndButton.classList.add("play-again-div-active");
 }
+
+function gameTerminateWin() {
+  const winnerAnnouncement = document.querySelector(".result");
+  const winnerTextAndButton = document.querySelector(".play-again-div");
+  const commentaryDiv = document.querySelector(".score-com");
+  allButtons.forEach(function (button) {
+    button.style.display = "none";
+  });
+  commentaryDiv.style.display = "none";
+  playAgainButton.classList.add("active");
+  winnerAnnouncement.innerText = "WON";
+  winnerAnnouncement.style.color = "#2a9d8f";
+  winnerTextAndButton.classList.add("play-again-div-active");
+}
+
 function restartGame() {
+  const commentaryDiv = document.querySelector(".score-com");
+  const playerCommentary = document.querySelector(".player-commentary");
+  const computerCommentary = document.querySelector(".computer-commentary");
+  const winnerCommentary = document.querySelector(".score-commentary-final");
+  const winnerTextAndButton = document.querySelector(".play-again-div");
   playerCurrentScore = 0;
   computerCurrentScore = 0;
   playAgainButton.style.display = "none";
-  playerScore = playerCurrentScore;
-  computerScore = computerCurrentScore;
+  winnerTextAndButton.style.display = "none";
+  commentaryDiv.style.display = "";
+  allButtons.forEach(function (button) {
+    button.style.display = "";
+  });
+  playerCommentary.innerText = "";
+  computerCommentary.innerText = "";
+  winnerCommentary.innerText = "";
+  playerScore.innerText = "0";
+  computerScore.innerText = "0";
 }
