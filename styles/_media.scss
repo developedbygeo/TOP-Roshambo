@@ -1,0 +1,77 @@
+@media screen and (min-width: 768px) and (max-width: 800px) {
+  main {
+    grid-template-rows: repeat(2, minmax(3rem, 40rem));
+  }
+  .score-com {
+    grid-area: 2/3/3;
+  }
+  .play-again-div {
+    grid-area: 1/1/1/4;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+  body {
+    overflow-y: hidden;
+  }
+  main {
+    height: 93vh;
+  }
+  .introduction {
+    height: 10vh;
+    text-align: center;
+  }
+  .rock {
+    background-size: 85%;
+  }
+  .paper {
+    background-size: 130%;
+  }
+  .scissors {
+    background-size: 150%;
+  }
+  .score-commentary-final {
+    letter-spacing: 0.5rem;
+  }
+  .score-com {
+    grid-area: 2/2/3/4;
+  }
+  .score {
+    grid-area: 2/1;
+    .current-score,
+    .player,
+    .computer {
+      font-size: 4rem;
+      letter-spacing: 1rem;
+    }
+  }
+  .current-score {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+  .score h2 {
+    letter-spacing: 0.5rem;
+  }
+  .play-again-div {
+    grid-area: 1/1/2/4;
+  }
+}
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media screen and (max-width: 280px) {
+  html {
+    font-size: 35%;
+  }
+  .introduction {
+    height: 15vh;
+  }
+  main {
+    height: 85vh;
+  }
+}
