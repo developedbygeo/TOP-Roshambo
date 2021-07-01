@@ -23,7 +23,7 @@ Changes are welcome.
 ## Live Version
 
 ```
-https://developedbygeo.github.io/Roshambo/
+https://developedbygeo.github.io/TOP-Roshambo/
 ```
 
 ## License
